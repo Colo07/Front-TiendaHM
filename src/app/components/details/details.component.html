@@ -1,13 +1,19 @@
-<article class="clothes-container">
-    <section class="clothes-item">
-        <div class="card" style="width: 100%;">
-            <!-- <img src="{{clothe.imgF}}" class="card-img-top" alt="..." onmouseover src="{{clothe.imgB}}" onmouseout src ="{{clothe.imgF}}">
-            <div class="card-body">
-               <h5 class="card-title">{{clothe.name}}</h5>  clothe sale de la linea 3 del ngFor q es la propiedad que se itera
-              <p class="card-text">{{clothe.price}} </p> -->
-              <button [routerLink]="['/home']" class="btn btn-primary">Volver</button>
-                    <!-- Mando por parametro el id a cada boton de cada articulo -->
-            </div>
-          
-    </section>
-</article>
+<div class="container">
+    <div class="row justify-content-center" >
+        <div class="col-8">
+            <article class="clothes-container py-5">
+                <section class="clothes-item">
+                    <div class="card" style="width: 100%;">
+                    <img src="{{clothe.imgF}}" class="card-img-top" alt="..." onmouseover src="{{clothe.imgB}}" onmouseout src ="{{clothe.imgF}}">
+                        <div class="card-body">
+                           <h5 class="card-title">{{clothe.name}}</h5>  <!--clothe sale de la linea 3 del ngFor q es la propiedad que se itera -->
+                          <p class="card-text">{{clothe.price}} </p>
+                        <button [routerLink]="['/home']" class="btn btn-primary">Volver</button>
+                                <!-- Mando por parametro el id a cada boton de cada articulo -->
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </div>
+</div>
