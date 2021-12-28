@@ -10,6 +10,8 @@ import { SearchfieldComponent } from './components/searchfield/searchfield.compo
 import { CardsComponent } from './components/cards/cards.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UpperCasePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CardsfilteredComponent } from './components/cardsfiltered/cardsfiltered.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { UpperCasePipe } from '@angular/common';
     SearchfieldComponent,
     CardsComponent,
     HeaderComponent,
+    CardsfilteredComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

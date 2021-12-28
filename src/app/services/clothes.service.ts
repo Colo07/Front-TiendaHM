@@ -56,9 +56,16 @@ export class ClothesService {
 }
   ];
 
+  filtered:any[]=[];
+  
   constructor() {}
 
   getClothes(id: number) {
    return this.clothes[id]
   }
-}
+
+  filterClothes (text:string){
+    this.filtered =  this.clothes.filter((clothe) => clothe.name.toLowerCase().includes(text.toLowerCase)); }
+  }
+
+  

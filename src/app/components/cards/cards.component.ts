@@ -16,9 +16,6 @@ export class CardsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  navigate() {
-    console.log("anda")
-  }
 
 }
 
