@@ -11,8 +11,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CardsfilteredComponent } from './components/cardsfiltered/cardsfiltered.component';
-
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,13 +21,12 @@ import { CardsfilteredComponent } from './components/cardsfiltered/cardsfiltered
     SearchfieldComponent,
     CardsComponent,
     HeaderComponent,
-    CardsfilteredComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

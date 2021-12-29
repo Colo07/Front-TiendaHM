@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, Output,EventEmitter} from '@angular/core';
+import { Component, OnInit,OnDestroy,OnChanges,Input, Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -9,7 +9,7 @@ export class CardComponent implements OnInit {
 
   @Input() clothe:any = {}
 
-  @Input('index')i:number=0;
+  @Input('index') i: number = 0;
 
   constructor() { }
 
@@ -18,6 +18,13 @@ export class CardComponent implements OnInit {
 
   navigate() {
     console.log("anda")
+  }
+  ngOnChanges(values: any): void {
+    // console.log('on changes', values);
+  }
+
+  ngOnDestroy(): void {
+    // console.log('on destroy');
   }
 
 }

@@ -10,14 +10,18 @@ import { ClothesService } from 'src/app/services/clothes.service';
 export class DetailsComponent implements OnInit {
   
   clothe:any;
+  clothes:any = [];
+
   constructor(private activatedRoute: ActivatedRoute, private clothesSvc: ClothesService) { 
-    this.activatedRoute.params.subscribe((params) => {
-      this.clothe = this.clothesSvc.getClothes(params['id']);
-      console.log(this.clothe);
-    });
+    // this.activatedRoute.params.subscribe((params) => {
+    //   this.clothe = this.clothesSvc.getClothes();
+    //   console.log(this.clothe);
+    // });
   }
 
   ngOnInit(): void {
   }
-
+  onReset() {
+    this.clothesSvc.resetClothes();
+  }
 }
