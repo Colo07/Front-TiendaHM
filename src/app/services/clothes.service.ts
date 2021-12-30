@@ -8,7 +8,6 @@ import { Axios  } from 'axios';
 @Injectable({
   providedIn: 'root'  //Inyectable que va en el route de la app 
 })
-  
 export class ClothesService {
    initialClothes: Clothe[] = [
      { //hoodies
@@ -75,11 +74,7 @@ export class ClothesService {
     this.getClothesSvc();
 
   }
-  
-  
   clothes$: BehaviorSubject<Clothe[]>= new BehaviorSubject(this.initialClothes);
-
-
   getClothes(): Observable<Clothe[]> {
     return this.clothes$.asObservable();
   }
@@ -94,17 +89,12 @@ export class ClothesService {
   }
 
   filterClothes(text:string) {
-
   const filteredClothes= this.clothes$.value.filter((clothe) => clothe.name.toLowerCase().includes(text.toLowerCase()));
-  
   this.clothes$.next(filteredClothes) ;
-  
  } 
-
  getClothe(id:number){
    return this.initialClothes[id];
  }
-
  resetClothes () {
    this.getClothesSvc();
  }
