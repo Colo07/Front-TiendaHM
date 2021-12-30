@@ -4,18 +4,35 @@
             <article class="clothes-container py-5">
                 <section class="clothes-item">
                     <div class="card" style="width: 100%;">
-                    <img src="{{clothe.imgF}}" class="card-img-top" alt="..." onmouseover src="{{clothe.imgB}}" onmouseout src ="{{clothe.imgF}}">
-                        <div class="card-body">
-                           <h5 class="card-title">{{clothe.name}}</h5>  <!--clothe sale de la linea 3 del ngFor q es la propiedad que se itera -->
-                          <p class="card-text">{{clothe.price}} </p>
-                        <button [routerLink]="['/home']" class="btn btn-primary">Volver</button>
-                                <!-- Mando por parametro el id a cada boton de cada articulo -->
+                        <div class="container gallery-container">
+    
+                            <div class="tz-gallery">
+                        
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6">
+                                        <a class="lightbox">
+                                            <img src="{{clothe.imgF}}" class="card-img-top" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <a class="lightbox">
+                                            <img src="{{clothe.imgB}}" class="card-img-top" alt="...">
+                                        </a>
+                                    </div>
+                                    <h1 class="card-name">{{clothe.name | uppercase}}</h1> 
+                                    <h5 class="card-color">Colors available: {{clothe.color}}</h5> 
+                                    <h5 class="card-size">Size: {{clothe.size}}</h5> 
+                                    <h5 class="card-price">Price: {{clothe.price}}</h5> 
+                                    <h5 class="card-type">Type: {{clothe.type}}</h5> 
+                                </div>
+                            </div>    
+                        </div>                       
+                        <button [routerLink]="['/shop']" class="btn btn-primary">Back</button>
                         </div>
+                    </section>
+                    </article>
                     </div>
-                </section>
-            </article>
-        </div>
     </div>
-</div>
+    </div>
 
 

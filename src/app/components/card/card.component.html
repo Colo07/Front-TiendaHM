@@ -1,9 +1,8 @@
 <div class="card" style="width: 100%">
   <img [src]="clothe.imgF" class="card-img-top" alt="...">
   <div class="card-body">
-     <h5 class="card-title">{{clothe.name}}</h5> 
-    <p class="card-text">{{clothe.price}} </p>
-    <button [routerLink]="['/details',i]" (click)="navigate()" class="btn btn-primary">Comprar</button>
-          <!-- Mando por parametro el id a cada boton de cada articulo -->
+     <h5 class="card-name">{{clothe.name | uppercase}}     </h5> 
+    <p class="card-price">{{clothe.price}}</p>
+    <button [routerLink]="['/details',i]" (click)="navigate()" class="btn btn-primary">Purchase</button>
   </div>
 </div>

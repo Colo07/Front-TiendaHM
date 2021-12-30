@@ -1,4 +1,4 @@
-import { Component, OnInit,OnDestroy,OnChanges,Input, Output,EventEmitter} from '@angular/core';
+import { Component, OnInit,Input, Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -11,20 +11,14 @@ export class CardComponent implements OnInit {
 
   @Input('index') i: number = 0;
 
+  @Output() clickCard= new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   navigate() {
-    console.log("anda")
-  }
-  ngOnChanges(values: any): void {
-    // console.log('on changes', values);
-  }
-
-  ngOnDestroy(): void {
-    // console.log('on destroy');
-  }
-
+    console.log("anda");
+  };
 }

@@ -1,0 +1,61 @@
+.container{
+    margin: 150px;
+    
+}
+
+h2{
+    color: #0B4D91;
+    text-align: center;
+    font-size: 40px;
+
+}
+
+p{
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.img-thumbnail{
+    margin-bottom: 150px;
+}
+
+
+
+
+button{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #4A7BBD;
+    color:#ffff;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+button:hover{
+    margin-top: 17px;
+    background-color: #0B4D91;;
+}
+
+// Medium devices (cel)
+@media (min-width: 566px) {
+.container { 
+    padding: 1.5rem;
+    display:grid;
+    grid-template-columns: 1fr; //Para celular
+    gap: 1rem;
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    .container { 
+        padding: 1.5rem;
+        display:grid;
+        grid-template-columns: repeat(2,1fr); // Para tablet
+        gap: 1rem;
+    
+    }
+}}

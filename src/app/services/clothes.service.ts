@@ -1,13 +1,14 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, retry, filter } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Clothe, Clothes } from '../models/api-models';
+import { Axios  } from 'axios';
 @Injectable({
   providedIn: 'root'  //Inyectable que va en el route de la app 
 })
-
+  
 export class ClothesService {
    initialClothes: Clothe[] = [
      { //hoodies
@@ -71,7 +72,7 @@ export class ClothesService {
    ];
   
   constructor(private http: HttpClient) {
-    this.getClothes();
+    this.getClothesSvc();
 
   }
   
@@ -94,9 +95,9 @@ export class ClothesService {
 
   filterClothes(text:string) {
 
- const filteredClothes= this.clothes$.value.filter((clothe) => clothe.name.toLowerCase().includes(text.toLowerCase()));
+  const filteredClothes= this.clothes$.value.filter((clothe) => clothe.name.toLowerCase().includes(text.toLowerCase()));
   
- this.clothes$.next(filteredClothes) ;
+  this.clothes$.next(filteredClothes) ;
   
  } 
 
@@ -108,6 +109,9 @@ export class ClothesService {
    this.getClothesSvc();
  }
 
- 
+
+
+
+
 } 
 

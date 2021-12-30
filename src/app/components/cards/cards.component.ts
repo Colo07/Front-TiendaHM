@@ -1,7 +1,4 @@
-import { Component, OnInit, OnDestroy,
-  ViewChild,
-  ElementRef,
-  AfterViewInit, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Clothe } from 'src/app/models/api-models';
 import { ClothesService} from 'src/app/services/clothes.service';
 import { Subscription } from 'rxjs';
@@ -20,28 +17,15 @@ import { Subscription } from 'rxjs';
 export class CardsComponent implements OnInit {
 
   clothes: Clothe[] = [];
-  subscription: Subscription = new Subscription();
-  @ViewChild('clothes') article!: ElementRef;
-
 
   constructor(private clothesSvc:ClothesService) {
-    //this.clothes=this.clothesSvc.clothes;  // el constructor se hace solamente cuando se crea el componente
+    this.clothesSvc.getClothes().subscribe((resp)=> {
+      console.log("Respuesta del endpoint desde el componente: ", resp);
+      this.clothes = resp;
+    });
+    }
 
-    };
-    // this.clothesSvc.getMug().subscribe((resp:any) => {
-    //   console.log ('Respuesta del endpoint mugs desde el componente:',resp);
-        // });
-
-  ngOnInit(): void {
-    this.subscription = this.clothesSvc
-      .getClothes()
-      .subscribe((clothes: Clothe[]) => {
-        // console.log(
-        //   'Respuesta del endpoint heroes desde el componente: ',
-        //   heroes
-        // );
-        this.clothes = clothes;
-  } ); }
+  ngOnInit(): void {}
 
   navigate(){
     console.log('click');
@@ -52,9 +36,4 @@ export class CardsComponent implements OnInit {
       // this.login.log();
     }
 
-
-
-    ngOnDestroy(): void {
-      this.subscription.unsubscribe();
-    }
 }

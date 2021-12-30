@@ -12,6 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutUsComponent } from './components/aboutUs/about-us.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,8 @@ import {HttpClientModule} from '@angular/common/http';
     SearchfieldComponent,
     CardsComponent,
     HeaderComponent,
+    ContactComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
